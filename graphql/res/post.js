@@ -17,6 +17,7 @@ export default {
         },
         async getRandomPosts(_,{}){
             const posts=await Post.aggregate([{$sample:{size:40}}])
+            console.log(posts)
             return posts
         },
         async getPost(_,{postId}){

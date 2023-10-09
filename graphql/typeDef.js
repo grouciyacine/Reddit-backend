@@ -11,6 +11,16 @@ type Post{
     comments:[Comment]!
     createdAt:String!
 },
+type Random{
+    _id:ID!,
+    title:String!,
+    desc:String!,
+    img:String!,
+    userId:String!,
+    likes:[String]!,
+    comments:[Comment]!
+    createdAt:String!
+},
 type Comment{
     id:ID!,
     desc:String!,
@@ -64,7 +74,7 @@ getPost(postId:ID):Post
 getComments(postId:ID):[Comment]
 getUser(userId:ID):User
 SearchUser(name:String):[SearchUser!],
-getRandomPosts:[Post]
+getRandomPosts:[Random],
 }
 type Refresh{
     newToken:String!,
