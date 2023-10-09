@@ -33,7 +33,7 @@ export default {
         }
     },
     Mutation: {
-        async Register(_, { registerInput: { username, password, email } }, context, info) {
+        async Register(_, { registerInput: { username, password, email,img } }, context, info) {
             const user = await User.find({ username: username })
             if (user.length > 0) {
                 throw new UserInputError('username already exists'), {
@@ -47,11 +47,13 @@ export default {
             const newUser = new User({
                 username: username,
                 password: newPassword,
-                email: email
+                email: email,
+                img:img
             })
             const res = await newUser.save()
             const token = jwt.sign({ id: res._id }, process.env.JWT)
             return {
+                img:res.img,
                 username: res.username,
                 email: res.email,
                 id: res._id,

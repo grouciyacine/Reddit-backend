@@ -62,6 +62,7 @@ input RegisterInput{
     email:String!
     password:String!
     username:String!
+    img:String!
 }
 input CreatePost{
     title:String!,
