@@ -64,6 +64,7 @@ getPost(postId:ID):Post
 getComments(postId:ID):[Comment]
 getUser(userId:ID):User
 SearchUser(name:String):[SearchUser!],
+getRandomPosts:[Post]
 }
 type Refresh{
     newToken:String!,

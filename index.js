@@ -15,7 +15,7 @@ cloudinary.v2.config({
     api_secret:'DJhFrdw5tvA07hCB47zjf-7sxbc'
 })
 app.use(cors({
-    origin: 'http://localhost:3000', // Replace with your frontend domain
+    origin: 'https://reddit-front-livid.vercel.app/', // Replace with your frontend domain
     credentials: true, // If you need to include credentials (e.g., cookies) in the request
   }));
 const server=new ApolloServer({

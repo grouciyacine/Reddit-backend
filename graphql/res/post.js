@@ -15,6 +15,10 @@ export default {
             const posts=await Post.find({userId:{$in:followersIds}}).sort({createdAt:-1})
             return  posts
         },
+        async getRandomPosts(_,{}){
+            const posts=await Post.aggregate([{$sample:{size:40}}])
+            return posts
+        },
         async getPost(_,{postId}){
             const post=await Post.findById(postId)
             return post
