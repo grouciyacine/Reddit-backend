@@ -86,7 +86,7 @@ type File{
     url: String!
 }
 type Mutation{
-    Register(registerInput:RegisterInput):User!,
+    Register(registerInput:RegisterInput!):User!,
     RefreshToken(token:String!):Refresh!
     Login(username:String!,password:String!):User!
     CreatePost(createPost:CreatePost):Post!
